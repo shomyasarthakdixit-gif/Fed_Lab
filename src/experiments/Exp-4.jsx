@@ -1,29 +1,53 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef } from 'react';
+import styles from './styles.module.css';
 
-function Exp4_StylingStrategies() {
+const ExperimentPage = () => {
+  // Controlled Component State
+  const [controlledValue, setControlledValue] = useState('');
 
-  const [text, setText] = useState("");
-  const inputRef = useRef();
+  // Uncontrolled Component Ref
+  const inputRef = useRef(null);
+
+  const handleUncontrolledClick = () => {
+    alert(`Uncontrolled Value: ${inputRef.current.value}`);
+  };
 
   return (
-    <div>
-      <h2>Experiment 4 – Inputs</h2>
+    <div className={styles.container}>
+      <div className={styles.pageHeader}>
+        <h1>React Components Experiment</h1>
+        
+        {/* Controlled Section */}
+        <section className={styles.section}>
+          <h3>Controlled Component</h3>
+          <input 
+            type="text" 
+            value={controlledValue} 
+            onChange={(e) => setControlledValue(e.target.value)} 
+            placeholder="Type something..."
+            className={styles.inputField}
+          />
+          <p>Current State: <strong>{controlledValue}</strong></p>
+        </section>
 
-      <input
-        value={text}
-        onChange={(e)=>setText(e.target.value)}
-        placeholder="Controlled input"
-      />
+        <hr className={styles.divider} />
 
-      <br/><br/>
-
-      <input ref={inputRef} placeholder="Uncontrolled input"/>
-
-      <button onClick={()=>alert(inputRef.current.value)}>
-        Show Value
-      </button>
+        {/* Uncontrolled Section */}
+        <section className={styles.section}>
+          <h3>Uncontrolled Component</h3>
+          <input 
+            type="text" 
+            ref={inputRef} 
+            placeholder="Type and click button..."
+            className={styles.inputField}
+          />
+          <button onClick={handleUncontrolledClick} className={styles.button}>
+            Get Value via Ref
+          </button>
+        </section>
+      </div>
     </div>
   );
-}
+};
 
-export default Exp4_StylingStrategies;
+export default ExperimentPage;
