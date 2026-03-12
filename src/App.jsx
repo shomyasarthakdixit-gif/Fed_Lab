@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProjectNavbar from "./experiments/Navbar.jsx";
+
 import Exp1 from "./experiments/Exp-1.jsx";
 import Exp2 from "./experiments/Exp-2.jsx";
 import Exp3 from "./experiments/Exp-3.jsx";
@@ -8,17 +9,18 @@ import Exp5 from "./experiments/Exp-5.jsx";
 import Exp6 from "./experiments/Exp-6.jsx";
 import Exp7 from "./experiments/Exp-7.jsx";
 import Exp8 from "./experiments/Exp-8.jsx";
-import Exp9 from "./experiments/Exp-9.jsx";
+import Exp9 from "./experiments/Exp-9.jsx";   // FIXED
 import Exp10 from "./experiments/Exp-10.jsx";
 
 function App() {
   return (
     <BrowserRouter>
       <ProjectNavbar />
-      {/* Added paddingTop so content isn't hidden behind the fixed navbar */}
+
       <div style={{ padding: "80px 20px 20px 20px" }}>
         <Routes>
           <Route path="/" element={<h2>Select an Experiment from the Navbar</h2>} />
+
           <Route path="/exp1" element={<Exp1 />} />
           <Route path="/exp2" element={<Exp2 />} />
           <Route path="/exp3" element={<Exp3 />} />
