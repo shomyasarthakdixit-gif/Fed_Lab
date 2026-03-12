@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/App.jsx</title>
+    <title>Code coverage report for src/experiments/Navbar.jsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,13 +19,13 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> App.jsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/experiments</a> Navbar.jsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
@@ -103,9 +103,12 @@
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -132,6 +135,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -143,47 +147,49 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProjectNavbar from "./experiments/Navbar.jsx";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from "react";
+import { Link } from "react-router-dom";
 &nbsp;
-import Exp1 from "./experiments/Exp-1.jsx";
-import Exp2 from "./experiments/Exp-2.jsx";
-import Exp3 from "./experiments/Exp-3.jsx";
-import Exp4 from "./experiments/Exp-4.jsx";
-import Exp5 from "./experiments/Exp-5.jsx";
-import Exp6 from "./experiments/Exp-6.jsx";
-import Exp7 from "./experiments/Exp-7.jsx";
-import Exp8 from "./experiments/Exp-8.jsx";
-import Exp9 from "./experiments/Exp-9.jsx";
-import Exp10 from "./experiments/Exp-10.jsx";
+const experiments = [
+  { name: "Exp1", path: "/exp1" },
+  { name: "Exp2", path: "/exp2" },
+  { name: "Exp3", path: "/exp3" },
+  { name: "Exp4", path: "/exp4" },
+  { name: "Exp5", path: "/exp5" },
+  { name: "Exp6", path: "/exp6" },
+  { name: "Exp7", path: "/exp7" },
+  { name: "Exp8", path: "/exp8" },
+  { name: "Exp9", path: "/exp9" },
+  { name: "Exp10", path: "/exp10" }
+];
 &nbsp;
-// Router component
-function App() {
+function ProjectNavbar() {
   return (
-    &lt;BrowserRouter&gt;
-      &lt;ProjectNavbar /&gt;
-&nbsp;
-      &lt;div style={{ padding: "80px 20px 20px 20px" }}&gt;
-        &lt;Routes&gt;
-          &lt;Route path="/" element={&lt;h2&gt;Select an Experiment from the Navbar&lt;/h2&gt;} /&gt;
-&nbsp;
-          &lt;Route path="/exp1" element={&lt;Exp1 /&gt;} /&gt;
-          &lt;Route path="/exp2" element={&lt;Exp2 /&gt;} /&gt;
-          &lt;Route path="/exp3" element={&lt;Exp3 /&gt;} /&gt;
-          &lt;Route path="/exp4" element={&lt;Exp4 /&gt;} /&gt;
-          &lt;Route path="/exp5" element={&lt;Exp5 /&gt;} /&gt;
-          &lt;Route path="/exp6" element={&lt;Exp6 /&gt;} /&gt;
-          &lt;Route path="/exp7" element={&lt;Exp7 /&gt;} /&gt;
-          &lt;Route path="/exp8" element={&lt;Exp8 /&gt;} /&gt;
-          &lt;Route path="/exp9" element={&lt;Exp9 /&gt;} /&gt;
-          &lt;Route path="/exp10" element={&lt;Exp10 /&gt;} /&gt;
-        &lt;/Routes&gt;
-      &lt;/div&gt;
-    &lt;/BrowserRouter&gt;
+    &lt;nav style={{ 
+      background: "#1e293b", 
+      padding: "15px", 
+      position: "fixed", // Keeps it at the top
+      top: 0, 
+      left: 0, 
+      width: "100%", 
+      zIndex: 1000,
+      display: "flex",
+      justifyContent: "center"
+    }}&gt;
+      {experiments.map((exp) =&gt; (
+        &lt;Link
+          key={exp.path}
+          to={exp.path}
+          style={{ color: "white", marginRight: "15px", textDecoration: "none" }}
+        &gt;
+          {exp.name}
+        &lt;/Link&gt;
+      ))}
+    &lt;/nav&gt;
   );
 }
 &nbsp;
-export default App;</pre></td></tr></table></pre>
+export default ProjectNavbar;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
@@ -192,14 +198,14 @@ export default App;</pre></td></tr></table></pre>
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2026-03-12T03:14:34.989Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     
