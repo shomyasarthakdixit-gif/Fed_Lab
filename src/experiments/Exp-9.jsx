@@ -2,55 +2,6 @@ import React, { useState } from "react";
 
 /* ---------------- ProductCard ---------------- */
 
-function ProductCard({ product, onAddToCart }) {
-  return (
-    <div style={styles.card}>
-      <h3>{product.name}</h3>
-      <p>Price: ₹{product.price}</p>
-
-      <button
-        style={styles.button}
-        onClick={() => onAddToCart(product)}
-      >
-        Add to Cart
-      </button>
-    </div>
-  );
-}
-
-/* ---------------- ProductList ---------------- */
-
-function ProductList({ products, onAddToCart }) {
-  return (
-    <div>
-      <h2>Product List</h2>
-
-      <div style={styles.grid}>
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onAddToCart={onAddToCart}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ---------------- CartSummary ---------------- */
-
-function CartSummary({ cart }) {
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
-
-  return (
-    <div style={styles.cart}>
-      <h2>Cart Summary</h2>
-      <p>Items in Cart: {cart.length}</p>
-      <p>Total Price: ₹{total}</p>
-    </div>
-  );
-}
 
 /* ---------------- Main Experiment Component ---------------- */
 
@@ -82,13 +33,6 @@ function Exp9() {
         individual component behavior while integration testing verifies
         interactions between multiple components.
       </p>
-
-      <ProductList
-        products={products}
-        onAddToCart={handleAddToCart}
-      />
-
-      <CartSummary cart={cart} />
 
     </div>
   );
