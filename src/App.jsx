@@ -9,9 +9,10 @@ import Exp5 from "./experiments/Exp-5.jsx";
 import Exp6 from "./experiments/Exp-6.jsx";
 import Exp7 from "./experiments/Exp-7.jsx";
 import Exp8 from "./experiments/Exp-8.jsx";
-import Exp9 from "./experiments/Exp-9.jsx";   // FIXED
+import Exp9 from "./experiments/Exp-9.jsx";
 import Exp10 from "./experiments/Exp-10.jsx";
 
+// Router component
 function App() {
   return (
     <BrowserRouter>
